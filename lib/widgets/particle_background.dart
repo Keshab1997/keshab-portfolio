@@ -62,7 +62,8 @@ class _ParticleBackgroundState extends State<ParticleBackground>
 
 class _Particle {
   double x, y;
-  final double size, speedX, speedY, opacity;
+  final double size, opacity;
+  double speedX, speedY;
   _Particle({
     required this.x,
     required this.y,
