@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 import '../../theme/app_theme.dart';
 
 class ContactSection extends StatefulWidget {
@@ -124,20 +124,22 @@ class _ContactSectionState extends State<ContactSection> {
         _buildTextField(_messageController, 'Tell me about your vision...',
             maxLines: 4),
         const SizedBox(height: 20),
-        GestureDetector(
-          onTap: () {
-            final uri = Uri(
-              scheme: 'mailto',
-              path: 'Keshabsarkar2018@gmail.com',
-              queryParameters: {
-                'subject': _subjectController.text,
-                'body': 'From: ${_nameController.text}\n'
-                    'Email: ${_emailController.text}\n\n'
-                    '${_messageController.text}',
-              },
-            );
-            html.window.open(uri.toString(), '_blank');
-          },
+	        GestureDetector(
+	          onTap: () async {
+	            final uri = Uri(
+	              scheme: 'mailto',
+	              path: 'Keshabsarkar2018@gmail.com',
+	              queryParameters: {
+	                'subject': _subjectController.text,
+	                'body': 'From: ${_nameController.text}\n'
+	                    'Email: ${_emailController.text}\n\n'
+	                    '${_messageController.text}',
+	              },
+	            );
+	            if (await canLaunchUrl(uri)) {
+	              await launchUrl(uri);
+	            }
+	          },
           child: Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 18),

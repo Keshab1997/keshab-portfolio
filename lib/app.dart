@@ -11,7 +11,7 @@ class PortfolioApp extends StatelessWidget {
       title: 'Keshab Sarkar',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

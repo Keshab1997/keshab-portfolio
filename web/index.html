@@ -9,12 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    body { margin: 0; padding: 0; background: #050510; overflow-x: hidden; }
-    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; background: #050510; overflow: hidden; }
   </style>
 </head>
 <body>
   <script src="flutter.js" defer></script>
+  <script>
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.src = 'main.dart.js';
+      script.type = 'application/javascript';
+      script.defer = false;
+      document.body.appendChild(script);
+    });
+  </script>
   <div id="root"></div>
 </body>
 </html>

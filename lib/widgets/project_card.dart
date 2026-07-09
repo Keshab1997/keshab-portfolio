@@ -85,17 +85,17 @@ class ProjectCard extends StatelessWidget {
                 ),
                 if (project.liveUrl != null) ...[
                   const SizedBox(height: 16),
-                  Row(
+                  const Row(
                     children: [
-                      const Text(
+                      Text(
                         '🔗 Live →',
                         style: TextStyle(
                           color: Color(0xFF6666AA),
                           fontSize: 13,
                         ),
                       ),
-                      const SizedBox(width: 20),
-                      const Text(
+                      SizedBox(width: 20),
+                      Text(
                         '🐙 Source',
                         style: TextStyle(
                           color: Color(0xFF6666AA),

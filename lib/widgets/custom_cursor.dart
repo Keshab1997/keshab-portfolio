@@ -11,7 +11,7 @@ class CustomCursor extends StatefulWidget {
 class _CustomCursorState extends State<CustomCursor>
     with SingleTickerProviderStateMixin {
   double _x = 0, _y = 0;
-  double _ringSize = 28;
+  final double _ringSize = 28;
   bool _visible = false;
 
   @override

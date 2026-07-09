@@ -38,7 +38,7 @@ class GallerySection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 40),
-          GalleryGrid(items: _items, captions: _captions),
+          const GalleryGrid(items: _items, captions: _captions),
         ],
       ),
     );

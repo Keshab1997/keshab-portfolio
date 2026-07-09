@@ -51,7 +51,7 @@ class _ParticleBackgroundState extends State<ParticleBackground>
       animation: _controller,
       builder: (context, child) {
         return CustomPaint(
-          painter: _ParticlePainter(_particles, MediaQuery.of(context).size),
+          painter: _ParticlePainter(_particles),
           child: child,
         );
       },
@@ -76,9 +76,8 @@ class _Particle {
 
 class _ParticlePainter extends CustomPainter {
   final List<_Particle> particles;
-  final Size canvasSize;
 
-  _ParticlePainter(this.particles, this.canvasSize);
+  _ParticlePainter(this.particles);
 
   @override
   void paint(Canvas canvas, Size size) {

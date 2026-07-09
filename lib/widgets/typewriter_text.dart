@@ -30,6 +30,7 @@ class _TypewriterTextState extends State<TypewriterText> {
 
   void _startTyping() {
     _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      if (!mounted) return;
       setState(() {
         final current = widget.words[_wordIndex];
         if (!_isDeleting) {
@@ -39,7 +40,10 @@ class _TypewriterTextState extends State<TypewriterText> {
           } else {
             _isDeleting = true;
             timer.cancel();
-            Future.delayed(const Duration(seconds: 2), _startTyping);
+            Future.delayed(const Duration(seconds: 2), () {
+              if (!mounted) return;
+              _startTyping();
+            });
             return;
           }
         } else {
@@ -50,7 +54,10 @@ class _TypewriterTextState extends State<TypewriterText> {
             _isDeleting = false;
             _wordIndex = (_wordIndex + 1) % widget.words.length;
             timer.cancel();
-            Future.delayed(const Duration(milliseconds: 500), _startTyping);
+            Future.delayed(const Duration(milliseconds: 500), () {
+              if (!mounted) return;
+              _startTyping();
+            });
             return;
           }
         }

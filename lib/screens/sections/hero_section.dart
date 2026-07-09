@@ -57,26 +57,26 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           // Typewriter
-          TypewriterText(
-            words: const [
+          const TypewriterText(
+            words: [
               'Flutter Developer',
               'Creative Technologist',
               'UI Engineer',
               'Problem Solver',
             ],
-            style: const TextStyle(
+            style: TextStyle(
               color: Color(0xFF8888CC),
               fontSize: 24,
             ),
           ),
           const SizedBox(height: 50),
           // Stats
-          Row(
+          const Row(
             children: [
               _Stat(number: '5+', label: 'Years Exp'),
-              const SizedBox(width: 50),
+              SizedBox(width: 50),
               _Stat(number: '20+', label: 'Projects'),
-              const SizedBox(width: 50),
+              SizedBox(width: 50),
               _Stat(number: '10+', label: 'Clients'),
             ],
           ),
